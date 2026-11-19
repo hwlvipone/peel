@@ -1,0 +1,10 @@
+{
+  "parent": { "character": "二", "pinyin": "èr", "gloss": "two", "audio": "/audio/er.mp3" },
+  "targets": [
+    { "character": "一", "pinyin": "yī", "gloss": "one", "audio": "/audio/yi.mp3" }
+  ],
+  "candidates": ["三", "一", "十", "工", "土"],
+  "hint": "Find the characters hidden inside.",
+  "completionNote": "二 is two strokes of 一.",
+  "previewEnd": "Theme preview — more levels coming"
+}
