@@ -43,13 +43,15 @@ function bindSfx() {
 }
 
 function renderOpening() {
-  app.innerHTML = `<main class="page opening"><header class="opening-header"><span class="wordmark">PEEL<span class="mark-dot">.</span></span><span class="edition">ONE SHAPE. MORE INSIDE.</span></header><section class="opening-main"><div class="title-art" aria-hidden="true"><span class="title-ring ring-one"></span><span class="title-ring ring-two"></span><span class="title-han" lang="zh-Hans">${level.parent.character}</span><span class="title-spark spark-one"></span><span class="title-spark spark-two"></span></div><div class="opening-copy"><span class="overline">THE HIDDEN CHARACTER GAME</span><h1>Peel<span class="mark-dot">.</span></h1><p>There’s more to every shape. Find what’s inside.</p><button type="button" class="action play-button" id="begin"><span>PLAY LEVEL 1</span><span class="button-arrow" aria-hidden="true">→</span></button><span class="opening-footnote">ONE LEVEL. ONE SECRET.</span></div></section></main>`;
-  document.querySelector('#begin')!.addEventListener('click', () => {
+  app.innerHTML = `<main class="page opening"><div class="opening-hero"><header class="opening-header"><span class="wordmark">PEEL<span class="mark-dot">.</span></span><span class="edition">ONE CHARACTER. MORE INSIDE.</span></header><section class="opening-main"><div class="title-art" aria-hidden="true"><span class="title-ring ring-one"></span><span class="title-ring ring-two"></span><span class="title-han" lang="zh-Hans">${level.parent.character}</span><span class="title-spark spark-one"></span><span class="title-spark spark-two"></span></div><div class="opening-copy"><span class="overline">A CHINESE CHARACTER PUZZLE</span><h1>Peel<span class="mark-dot">.</span></h1><p>Find the smaller characters hiding inside a larger one. Hear each one, and see what it means.</p><button type="button" class="action play-button" id="begin"><span>PLAY LEVEL 1</span><span class="button-arrow" aria-hidden="true">→</span></button><span class="opening-footnote">ONE LEVEL. MORE TO COME.</span></div></section></div><section class="how-to-play" aria-labelledby="how-to-play-heading"><h2 id="how-to-play-heading">How to play</h2><p>A large Chinese character appears with its pronunciation and a short English meaning.</p><p>Below it is a keyboard of possible characters. Tap the ones hiding inside the large character.</p><p>A right answer is collected. A miss just shakes — no lives, no timer.</p><p>When you've found them all, you'll see how the character is built.</p><p>You don't need to know Chinese to start. This is a puzzle, not a course.</p><p>Level 1 is live. More levels are on the way.</p><button type="button" class="action play-button" id="begin-after-how-to"><span>PLAY LEVEL 1</span><span class="button-arrow" aria-hidden="true">→</span></button></section></main>`;
+  const startLevel = () => {
     playSfx('tap');
     screen = 'level';
     save('started');
     render();
-  });
+  };
+  document.querySelector('#begin')!.addEventListener('click', startLevel);
+  document.querySelector('#begin-after-how-to')!.addEventListener('click', startLevel);
 }
 
 function collectedCard() {
